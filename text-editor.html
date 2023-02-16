@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <style>
+    </style>
+</head>
+<body>
+    <section>
+        <button id="bold">B</button>
+        <button id="italic"><i>i</i></button>
+        <button id="underline">U</button>
+        <button id="left">L</button>
+        <button id="center">C</button>
+        <button id="right">R</button>
+        <input type="number" id="number-input">
+        <input type="color" id="color-input">
+        <br><br>
+        <textarea id="text-input" cols="30" rows="5" style="width: 50%; height: 100px;">Hellow!</textarea>
+    </section>
+    <script>
+        const textInput = document.getElementById('text-input');
+        document.getElementById('bold').addEventListener('click', function () {
+            textInput.style.fontWeight = "700";
+        });
+        document.getElementById('italic').addEventListener('click', function () {
+            textInput.style.fontStyle = "italic";
+        });
+        document.getElementById('underline').addEventListener('click', function () {
+            textInput.style.textDecoration = "underline";
+        });
+        document.getElementById('left').addEventListener('click', function () {
+            textInput.style.textAlign = "left";
+        });
+        document.getElementById('center').addEventListener('click', function () {
+            textInput.style.textAlign = "center";
+        });
+        document.getElementById('right').addEventListener('click', function () {
+            textInput.style.textAlign = "right";
+        });document.getElementById('number-input').addEventListener('keyup', function () {
+            textInput.style.fontSize = this.value + "px";
+        });
+        document.getElementById('number-input').addEventListener('change', function (event) {
+            textInput.style.fontSize = event.target.value + "px";
+        });
+        document.getElementById('color-input').addEventListener('change', function () {
+            textInput.style.color = this.value;
+        });
+    </script>
+</body>
+</html>
